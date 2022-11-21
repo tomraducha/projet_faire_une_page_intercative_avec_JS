@@ -59,6 +59,17 @@ function removeBootstrap() {
 
 //Fonctionnalité 6:
 
-const buttonView = document.getElementsByClassName('btn-success')
-const textCard = document.querySelectorAll('p.card-text')
-console.log(textCard);
+document.querySelectorAll(".card")
+    .forEach((card) => {
+        card.querySelector("button")
+            .addEventListener("mouseover", () => {
+                card.querySelector("p")
+                    .classList.toggle("collapse");
+                let img = card.querySelector("img");
+                if (img.style.width === "20%") {
+                    img.style.width = "100%";
+                } else {
+                    img.style.width = "20%";
+                }
+            });
+    });
